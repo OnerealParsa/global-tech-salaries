@@ -1,70 +1,53 @@
+# Global Tech Salaries
+
+A small Python project that generates a synthetic salary dataset for tech jobs across countries and visualizes it with pandas + matplotlib.
+
+## How It Works (English summary)
+
+1. **`scraper.py`** — generates salary records for `Software Developer`, `Cybersecurity Engineer` and `Data Analyst` across `USA`, `Germany`, `India`, `Iran` and `Japan`, using per-country base salaries and per-job multipliers, then saves the dataset to `data/salaries.csv`
+2. **`annalysis.py`** — loads `data/salaries.csv`, builds a pivot table of average salary per country/job, and renders a grouped bar chart to `plots/salary_comparison.png`
+
+> **Note:** the dataset is **synthetic** (generated from base-salary tables, not scraped from a live source) — see the `Source: Generated` column in the output.
+
+## Run
+
+```bash
+pip install pandas numpy matplotlib
+python scraper.py
+python annalysis.py
+```
+
+## Output
+
+- `data/salaries.csv` — generated dataset (Job, Country, Avg / Min / Max salary in USD)
+- `plots/salary_comparison.png` — salary comparison chart
+
+Sample outputs are committed in the repository root (`salaries.csv`, `salary_comparison.png`).
+
+---
+
 ## معرفی پروژه
 
 این پروژه شامل دو بخش اصلی است:
 
-    تولید داده‌های نمونه حقوق برای مشاغل مختلف در کشورهای مختلف
-
-    تحلیل و مصورسازی داده‌های تولید شده
+- تولید داده‌های نمونه حقوق برای مشاغل مختلف در کشورهای مختلف
+- تحلیل و مصورسازی داده‌های تولید شده
 
 ## نیازمندی‌ها
 
-    Python 3.8+
-
-    کتابخانه‌های مورد نیاز:
-    text
-    pandas
-    numpy
-    matplotlib
+- Python 3.8+
+- کتابخانه‌های مورد نیاز: pandas، numpy، matplotlib
 
 ## نحوه اجرا
 
- نصب کتابخانه‌ها:
-    bash pip install pandas numpy matplotlib
-
-اجرای تولید داده:
-bash python scraper.py
-
-اجرای تحلیل داده:
-bash python analysis.py
-تحلیل و مصورسازی داده‌ها
-
-## توضیحات فایل‌ها
-scraper.py
-
-    تولید داده‌های تصادفی برای حقوق مشاغل IT در کشورهای مختلف
-
-    پارامترهای قابل تنظیم:
-
-        لیست کشورها
-
-        لیست مشاغل
-
-        حقوق پایه هر کشور
-
-        ضرایب افزایش حقوق بر اساس شغل
-
-analysis.py
-
-    تحلیل داده‌های حقوق و تولید نمودارهای مقایسه‌ای
-
-    خروجی:
-
-        نمودار مقایسه‌ای میانگین حقوق بر اساس کشور و شغل
-
-## نمونه خروجی
-
-نمودار تولید شده مقایسه حقوق در کشورهای مختلف برای مشاغل:
-
-    توسعه‌دهنده نرم‌افزار
-
-    مهندس امنیت سایبری
-
-    تحلیلگر داده
-
-
----
+```bash
+pip install pandas numpy matplotlib
+python scraper.py      # تولید داده‌ها
+python annalysis.py    # تحلیل و مصورسازی
+```
 
 ## محدودیت‌ها
-۱. عدم احتساب هزینه زندگی در کشورها  
-۲. نوسانات نرخ ارز در محاسبات  
+
+۱. عدم احتساب هزینه زندگی در کشورها
+۲. نوسانات نرخ ارز در محاسبات
 ۳. تفاوت‌های منطقه‌ای در هر کشور

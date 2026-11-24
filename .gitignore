@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Generated outputs (recreated by the scripts)
+data/
+plots/
+
+# Editors & OS
+.vscode/
+.idea/
+.DS_Store
